@@ -6,6 +6,7 @@ import 'package:wheather_app_clone/data/models/weather_main_model.dart';
 
 const String baseUrl = "api.openweathermap.org";
 const String apiToken = "139d82d53b7f20c0a44c1bc27377f9ff";
+const String UNITS = "metric";
 
 class AppRepository {
   static Future<WeatherMainModel> getWeatherMainDataByQuery({
@@ -14,6 +15,7 @@ class AppRepository {
     var queryParams = {
       "appid": apiToken,
       "q": query,
+      "birnima": "units=metric"
     };
     var uri = Uri.https(baseUrl, "/data/2.5/weather", queryParams);
     try {
@@ -36,8 +38,9 @@ class AppRepository {
       "lat": latLong.lat.toString(),
       "lon": latLong.long.toString(),
       "appid": apiToken,
+      "units": UNITS, 
     };
-    var uri = Uri.https(baseUrl, "/data/2.5/weather", queryParams);
+    var uri = Uri.http(baseUrl, "/data/2.5/weather", queryParams);
     try {
       Response response = await http.get(uri);
       if (response.statusCode >= 200 && response.statusCode < 300) {
