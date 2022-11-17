@@ -7,6 +7,7 @@ import 'package:wheather_app_clone/data/repository/app_repository.dart';
 import 'package:wheather_app_clone/utils/colors.dart';
 import 'package:wheather_app_clone/utils/images.dart';
 import 'package:wheather_app_clone/widgets/listview_widget.dart';
+import 'package:wheather_app_clone/widgets/text_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -110,26 +111,10 @@ class _HomePageState extends State<HomePage> {
                       return Expanded(
                         child: Column(children: [
                           const SizedBox(height: 86),
-                          Text(data.name,
-                              style: const TextStyle(
-                                  fontSize: 34,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.cFFFFFF)),
-                          Text("${data.mainInMain.temp.round()}°",
-                              style: const TextStyle(
-                                  fontSize: 96,
-                                  fontWeight: FontWeight.w200,
-                                  color: AppColors.cFFFFFF)),
-                          Text(data.weatherModel[0].description,
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.cFFFFFF.withOpacity(0.4))),
-                          const Text("H:24° L:18°",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.cFFFFFF)),
+                          textWidget(context, name: data.name, color: AppColors.cFFFFFF, fontWeight: FontWeight.w400, fontsize: 34.0),
+                          textWidget(context, name: "${data.mainInMain.temp.round()}", color: AppColors.cFFFFFF, fontWeight: FontWeight.w200, fontsize: 96.0),
+                          textWidget(context, name: data.weatherModel[0].description, color: AppColors.cFFFFFF.withOpacity(0.4), fontWeight: FontWeight.w600, fontsize: 20.0),
+                          textWidget(context, name: "H:24° L:18°", color: AppColors.cFFFFFF, fontWeight: FontWeight.w600, fontsize: 20.0),
                           const Spacer(),
                           Container(
                             height: 390,
@@ -150,21 +135,18 @@ class _HomePageState extends State<HomePage> {
                                 const SizedBox(
                                   height: 15,
                                 ),
-                                InkWell(
-                                  onTap: () {},
-                                  child: SizedBox(
-                                    width: 300,
-                                    child: Container(
-                                      margin: const EdgeInsets.only(
-                                          right: 120, left: 120),
-                                      width: 45,
-                                      height: 8,
-                                      decoration: BoxDecoration(
-                                        color: AppColors.c000000
-                                            .withOpacity(0.3),
-                                        borderRadius:
-                                            BorderRadius.circular(10),
-                                      ),
+                                SizedBox(
+                                  width: 300,
+                                  child: Container(
+                                    margin: const EdgeInsets.only(
+                                        right: 120, left: 120),
+                                    width: 45,
+                                    height: 8,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.c000000
+                                          .withOpacity(0.3),
+                                      borderRadius:
+                                          BorderRadius.circular(10),
                                     ),
                                   ),
                                 ),
@@ -218,7 +200,6 @@ class _HomePageState extends State<HomePage> {
                                             children: [
                                               listViewWidget(context, temp: data.mainInMain.temp),
                                               listViewWidget(context, temp: data.mainInMain.temp),
-                                              // listViewWidget(),
                                             ],
                                           ),
                                         ),
