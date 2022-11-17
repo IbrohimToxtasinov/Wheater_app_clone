@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wheather_app_clone/home_page.dart';
+import 'package:wheather_app_clone/screens/wheather_main/home_page.dart';
 
 void main() {
   runApp(const MyApp());
