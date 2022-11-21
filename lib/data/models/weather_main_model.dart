@@ -9,15 +9,15 @@ class WeatherMainModel {
   final List<WeatherModel> weatherModel;
   final String base;
   final MainInMain mainInMain;
-  final int visibility;
+  final num visibility;
   final WindInMain windInMain;
-  final int cloudsAll;
-  final int dateTime;
+  final num cloudsAll;
+  final num dateTime;
   final SysInMain sysInMain;
-  final int timezone;
-  final int id;
+  final num timezone;
+  final num id;
   final String name;
-  final int code;
+  final num code;
 
   WeatherMainModel({
     required this.sysInMain,

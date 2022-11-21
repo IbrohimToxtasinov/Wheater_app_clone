@@ -1,7 +1,7 @@
 class WindInMain {
-  final double speed;
-  final int deg;
-  final double gust;
+  final num speed;
+  final num deg;
+  final num gust;
 
   WindInMain({
     required this.deg,
@@ -11,9 +11,9 @@ class WindInMain {
 
   factory WindInMain.fromJson(Map<String, Object?> json) {
     return WindInMain(
-      deg: json["deg"] as int? ?? 0,
-      gust: json["gust"] as double? ?? 0.0,
-      speed: json["speed"] as double? ?? 0.0,
+      deg: json["deg"] as num? ?? 0,
+      gust: json["gust"] as num? ?? 0.0,
+      speed: json["speed"] as num? ?? 0.0,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wheather_app_clone/screens/wheather_main/home_page.dart';
+import 'package:wheather_app_clone/routes.dart';
+import 'package:wheather_app_clone/utils/time_utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      onGenerateRoute: (settings) => MyRouter.generateRoute(settings),
+      initialRoute: splashScreen,
     );
   }
 }

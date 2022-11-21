@@ -1,19 +1,19 @@
 class MainInMain {
-  final double temp;
+  final num temp;
 
-  final double feelsLike;
+  final num feelsLike;
 
-  final double tempMin;
+  final num tempMin;
 
-  final double tempMax;
+  final num tempMax;
 
-  final int pressure;
+  final num pressure;
 
-  final int humidity;
+  final num humidity;
 
-  final int seaLevel;
+  final num seaLevel;
 
-  final int grndLevel;
+  final num grndLevel;
 
   MainInMain({
     required this.feelsLike,
@@ -28,14 +28,14 @@ class MainInMain {
 
   factory MainInMain.fromJson(Map<String, Object?> json) {
     return MainInMain(
-      temp: json["temp"] as double? ?? 0.0,
+      temp: json["temp"] as num? ?? 0.0,
       feelsLike: json["feels_like"] as double? ?? 0.0,
       tempMin: json["temp_min"] as double? ?? 0.0,
       tempMax: json["temp_max"] as double? ?? 0.0,
-      pressure: json["pressure"] as int? ?? 0,
-      humidity: json["humidity"] as int? ?? 0,
-      seaLevel: json["sea_level"] as int? ?? 0,
-      grndLevel: json["grnd_level"] as int? ?? 0,
+      pressure: json["pressure"] as num? ?? 0,
+      humidity: json["humidity"] as num? ?? 0,
+      seaLevel: json["sea_level"] as num? ?? 0,
+      grndLevel: json["grnd_level"] as num? ?? 0,
     );
   }
 }

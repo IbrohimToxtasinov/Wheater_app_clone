@@ -1,5 +1,5 @@
 class WeatherModel {
-  final int id;
+  final num id;
   final String main;
   final String description;
   final String icon;
@@ -13,7 +13,7 @@ class WeatherModel {
 
   factory WeatherModel.fromJson(Map<String, Object?> json) {
     return WeatherModel(
-      id: json["id"] as int? ?? 0,
+      id: json["id"] as num? ?? 0,
       main: json["main"] as String? ?? "",
       description: json["description"] as String? ?? "",
       icon: json["icon"] as String? ?? "",

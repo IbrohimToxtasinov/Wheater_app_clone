@@ -1,8 +1,8 @@
 class SysInMain {
-  final int type;
-  final int id;
-  final int sunrise;
-  final int sunset;
+  final num type;
+  final num id;
+  final num sunrise;
+  final num sunset;
   final String country;
 
   SysInMain({
@@ -15,11 +15,11 @@ class SysInMain {
 
   factory SysInMain.fromJson(Map<String, Object?> json) {
     return SysInMain(
-      id: json["id"] as int? ?? 0,
-      type: json["type"] as int? ?? 0,
-      sunrise: json["sunrise"] as int? ?? 0,
+      id: json["id"] as num? ?? 0.0,
+      type: json["type"] as num? ?? 0.0,
+      sunrise: json["sunrise"] as num? ?? 0.0,
       country: json["country"] as String? ?? '',
-      sunset: json["sunset"] as int? ?? 0,
+      sunset: json["sunset"] as num? ?? 0.0,
     );
   }
 }
